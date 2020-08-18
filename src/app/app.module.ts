@@ -9,6 +9,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HaircutsComponent } from './haircuts/haircuts.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HaircutsComponent } from './haircuts/haircuts.component';
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule // CLI adds AppRoutingModule to the AppModule's imports array
+    AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

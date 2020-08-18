@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HaircutService } from '../shared/haircut/haircut.service';
 
 @Component({
   selector: 'app-haircuts',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./haircuts.component.css']
 })
 export class HaircutsComponent implements OnInit {
+  haircuts: Array<any>;
+  constructor(private haircutsService: HaircutService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
+    this.haircutsService.getAll().subscribe((data) => {
+      this.haircuts = data;
+    });
   }
 
 }

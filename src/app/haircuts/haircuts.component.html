@@ -1,41 +1,29 @@
+<div class="haircuts container">
+  <img class="slider-hero-image cutted" src="assets/images/bckgrnd.webp" alt="Random second slide">
+  <div class="centered haircuts hero text">
+    Nullam accumsan lorem in dui. Fusce egestas elit eget lorem. Quisque rutrum. Pellentesque posuere.
+    Cras dapibus. Curabitur turpis. Quisque rutrum. Fusce risus nisl, viverra et, tempor et, pretium in, sapien.
+    Nullam sagittis. Etiam iaculis nunc ac metus. Quisque rutrum. Vivamus euismod mauris.
+    Nullam accumsan lorem in dui.
+  </div>
+</div>
 <main role="main" class="container">
   <h2 class="h2">This is list of our haircuts</h2>
   <div class="row form-group">
-    <div class="col-sm">
+
+    <div *ngFor="let haircut of haircuts" class="col-sm">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">{{haircut.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{haircut.genderType}}</h6>
+          <p class="card-text">{{haircut.cost}}</p>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="row form-group">
+  <!--<div class="row form-group">
     <div class="col-sm">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
@@ -69,5 +57,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 </main>
