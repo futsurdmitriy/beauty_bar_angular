@@ -5,13 +5,17 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class HaircutService {
+export class OrderService {
 
   constructor(private http: HttpClient) { }
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/api/haircut/list');
+    return this.http.get('//localhost:8080/api/order/list');
   }
   getById(id): Observable<any> {
-    return this.http.get('//localhost:8080/api/haircut/get/' + id);
+    return this.http.get('//localhost:8080/api/order/get/' + id);
+  }
+
+  create(object): Observable<any> {
+    return this.http.post('//localhost:8080/api/order/create/', object);
   }
 }

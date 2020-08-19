@@ -1,0 +1,108 @@
+<div class="container">
+  <form class="needs-validation" novalidate [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label for="validationTooltip00">First name</label>
+        <input type="text" class="form-control" id="validationTooltip00"
+               placeholder="First name" value="" required formControlName="client_first_name">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label for="validationTooltip01">Middle name</label>
+        <input type="text" class="form-control" id="validationTooltip01"
+               placeholder="Middle name" required formControlName="client_middle_name">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label for="validationTooltip02">Second name</label>
+        <input type="text" name="client_second_name" class="form-control" id="validationTooltip02"
+               placeholder="Second name" required formControlName="client_second_name">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label>Gender</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios1"
+                 name="client_gender" value="male" checked required formControlName="client_gender">
+          <label class="form-check-label" for="exampleRadios1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios2" value="female"
+                 name="client_gender" formControlName="client_gender">
+          <label class="form-check-label" for="exampleRadios2">
+            Female
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios3" value="undefined"
+                 name="client_gender" formControlName="client_gender">
+          <label class="form-check-label" for="exampleRadios3" >
+            Undefined
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label for="inlineFormCustomSelect">Haircut</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect"
+                (change)="onChange($event.target.value)" name="client_haircut" formControlName="client_haircut">
+          <option selected>Choose...</option>
+          <option value="{{haircut.id}}" *ngFor="let haircut of haircuts" class="col-sm">
+            {{haircut.name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <div *ngIf="selectedHaircut">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ selectedHaircut.name }}</h5>
+              <p class="card-text"> Cost: {{ selectedHaircut.cost }} UAH </p>
+              <p class="card-text"> Gender type: {{selectedHaircut.genderType}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </form>
+</div>

@@ -5,6 +5,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import {HaircutsComponent} from './haircuts/haircuts.component';
+import {SignUpForAHaircutComponent} from './sign-up-for-a-haircut/sign-up-for-a-haircut.component';
 
 const routes: Routes = [
   { path: '', component : HomeComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'navigation', component : NavigationComponent },
   { path : 'footer', component : FooterComponent },
   { path : 'carousel', component : CarouselComponent },
-  { path : 'haircuts', component : HaircutsComponent }
+  { path : 'haircuts', component : HaircutsComponent },
+  { path : 'sign-up-for-a-haircut', component : SignUpForAHaircutComponent }
 ];
 
 @NgModule({
