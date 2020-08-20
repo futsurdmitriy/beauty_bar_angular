@@ -41,8 +41,8 @@ const routes: Routes = [
     children: [
       {path: 'list', component: ClientAdminListComponent},
       {path: 'create', component: ClientAdminCreateComponent},
-      {path: 'update/:haircutId', component: ClientAdminUpdateComponent},
-      {path: 'delete/:haircutId', component: ClientAdminDeleteComponent},
+      {path: 'update/:clientId', component: ClientAdminUpdateComponent},
+      {path: 'delete/:clientId', component: ClientAdminDeleteComponent},
     ]
   },
 ];
