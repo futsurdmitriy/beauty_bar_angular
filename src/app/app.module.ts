@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { HaircutsComponent } from './haircuts/haircuts.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { SignUpForAHaircutComponent } from './sign-up-for-a-haircut/sign-up-for-a-haircut.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HaircutsAdminComponent } from './haircuts-admin/haircuts-admin.component';
 import { HaircutAdminCreateComponent } from './haircut-admin-create/haircut-admin-create.component';
 import { HaircutAdminUpdateComponent } from './haircut-admin-update/haircut-admin-update.component';
@@ -22,6 +22,11 @@ import { ClientAdminCreateComponent } from './client-admin-create/client-admin-c
 import { ClientAdminUpdateComponent } from './client-admin-update/client-admin-update.component';
 import { ClientAdminDeleteComponent } from './client-admin-delete/client-admin-delete.component';
 import { ClientAdminComponent } from './client-admin/client-admin.component';
+import { OrderAdminListComponent } from './order-admin-list/order-admin-list.component';
+import { OrderAdminDeleteComponent } from './order-admin-delete/order-admin-delete.component';
+import { OrderAdminComponent } from './order-admin/order-admin.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +47,19 @@ import { ClientAdminComponent } from './client-admin/client-admin.component';
     ClientAdminUpdateComponent,
     ClientAdminDeleteComponent,
     ClientAdminComponent,
+    OrderAdminListComponent,
+    OrderAdminDeleteComponent,
+    OrderAdminComponent,
+    ContactUsComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
     NgbModule,
     AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

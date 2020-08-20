@@ -16,6 +16,11 @@ import {ClientAdminListComponent} from './client-admin-list/client-admin-list.co
 import {ClientAdminCreateComponent} from './client-admin-create/client-admin-create.component';
 import {ClientAdminUpdateComponent} from './client-admin-update/client-admin-update.component';
 import {ClientAdminDeleteComponent} from './client-admin-delete/client-admin-delete.component';
+import {OrderAdminComponent} from './order-admin/order-admin.component';
+import {OrderAdminDeleteComponent} from './order-admin-delete/order-admin-delete.component';
+import {OrderAdminListComponent} from './order-admin-list/order-admin-list.component';
+import {ContactUsComponent} from './contact-us/contact-us.component';
+import {AboutUsComponent} from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component : HomeComponent },
@@ -25,6 +30,8 @@ const routes: Routes = [
   { path : 'carousel', component : CarouselComponent },
   { path : 'haircuts', component : HaircutsComponent },
   { path : 'sign-up-for-a-haircut', component : SignUpForAHaircutComponent },
+  { path : 'contact-us', component : ContactUsComponent },
+  { path : 'about-us', component : AboutUsComponent },
   {
     path : 'haircut-admin',
     component : HaircutsAdminComponent,
@@ -43,6 +50,14 @@ const routes: Routes = [
       {path: 'create', component: ClientAdminCreateComponent},
       {path: 'update/:clientId', component: ClientAdminUpdateComponent},
       {path: 'delete/:clientId', component: ClientAdminDeleteComponent},
+    ]
+  },
+  {
+    path : 'order-admin',
+    component : OrderAdminComponent,
+    children: [
+      {path: 'list', component: OrderAdminListComponent},
+      {path: 'delete/:orderId', component: OrderAdminDeleteComponent},
     ]
   },
 ];

@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">haircutId</th>
+      <th scope="col">clientId</th>
+      <th scope="col">createdAt</th>
+      <th scope="col">updatedAt</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders; index as i;">
+      <th scope="row">{{i}}</th>
+      <td>{{order.id}}</td>
+      <td>{{order.haircutId}}</td>
+      <td>{{order.clientId}}</td>
+      <td>{{order.createdAt}}</td>
+      <td>{{order.updatedAt}}</td>
+      <td>
+        <a class="nav-link" [routerLink]="['../delete', order.id]" routerLinkActive="active">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

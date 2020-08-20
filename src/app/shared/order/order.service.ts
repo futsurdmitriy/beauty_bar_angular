@@ -21,4 +21,7 @@ export class OrderService {
       error: error => console.error('There was an error', error)
     });
   }
+  delete(id): Observable<any> {
+    return this.http.delete('//localhost:8080/api/order/delete/' + id);
+  }
 }
