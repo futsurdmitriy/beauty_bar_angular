@@ -17,26 +17,26 @@ export class HaircutService {
 
   constructor(private http: HttpClient) { }
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/api/haircut/list');
+    return this.http.get('//https://beauty-bar-java.herokuapp.com//api/haircut/list');
   }
   getById(id): Observable<any> {
-    return this.http.get('//localhost:8080/api/haircut/get/' + id);
+    return this.http.get('//https://beauty-bar-java.herokuapp.com//api/haircut/get/' + id);
   }
   create(haircut): Observable<any> {
-    const obsResp = this.http.post<any>('//localhost:8080/api/haircut/create/',
+    const obsResp = this.http.post<any>('//https://beauty-bar-java.herokuapp.com//api/haircut/create/',
       haircut, httpOptions);
     return obsResp.pipe(
       tap( (fetchJSON) => JSON.stringify(fetchJSON) )
     );
   }
   update(haircut): Observable<any> {
-    const obsResp = this.http.post<any>('//localhost:8080/api/haircut/update/',
+    const obsResp = this.http.post<any>('//https://beauty-bar-java.herokuapp.com//api/haircut/update/',
       haircut, httpOptions);
     return obsResp.pipe(
       tap( (fetchJSON) => JSON.stringify(fetchJSON) )
     );
   }
   delete(id): Observable<any> {
-    return this.http.delete('//localhost:8080/api/haircut/delete/' + id);
+    return this.http.delete('//https://beauty-bar-java.herokuapp.com//api/haircut/delete/' + id);
   }
 }
