@@ -1,0 +1,64 @@
+<div class="container">
+  <form class="needs-validation" novalidate [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label for="validationTooltip00">Name</label>
+        <input type="text" class="form-control" id="validationTooltip00"
+               placeholder="Name" value="" required formControlName="name">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label for="validationTooltip02">Cost</label>
+        <input type="text" name="client_second_name" class="form-control" id="validationTooltip02"
+               placeholder="Cost" required formControlName="cost">
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 form-group">
+        <label>Gender Type</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios1"
+                 name="genderType" value="male" checked required formControlName="genderType">
+          <label class="form-check-label" for="exampleRadios1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios2" value="female"
+                 name="genderType" formControlName="genderType">
+          <label class="form-check-label" for="exampleRadios2">
+            Female
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios3" value="undefined"
+                 name="genderType" formControlName="genderType">
+          <label class="form-check-label" for="exampleRadios3" >
+            Undefined
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </form>
+</div>

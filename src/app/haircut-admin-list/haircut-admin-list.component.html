@@ -1,0 +1,31 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">genderType</th>
+      <th scope="col">cost</th>
+      <th scope="col">createdAt</th>
+      <th scope="col">updatedAt</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let haircut of haircuts; index as i;">
+      <th scope="row">{{i}}</th>
+      <td>{{haircut.id}}</td>
+      <td>{{haircut.name}}</td>
+      <td>{{haircut.genderType}}</td>
+      <td>{{haircut.cost}}</td>
+      <td>{{haircut.createdAt}}</td>
+      <td>{{haircut.updatedAt}}</td>
+      <td>
+        <a class="nav-link" [routerLink]="['../update', haircut.id]" routerLinkActive="active">Update</a>
+        <a class="nav-link" [routerLink]="['../delete', haircut.id]" routerLinkActive="active">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

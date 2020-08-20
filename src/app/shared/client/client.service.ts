@@ -41,4 +41,14 @@ export class ClientService {
       tap( (fetchJSON) => JSON.stringify(fetchJSON) )
     );
   }
+  update(haircut): Observable<any> {
+    const obsResp = this.http.post<any>('//localhost:8080/api/client/update/',
+      haircut, httpOptions);
+    return obsResp.pipe(
+      tap( (fetchJSON) => JSON.stringify(fetchJSON) )
+    );
+  }
+  delete(id): Observable<any> {
+    return this.http.delete('//localhost:8080/api/client/delete/' + id);
+  }
 }
