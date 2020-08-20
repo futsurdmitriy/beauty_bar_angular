@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "beautyBarAngular"
+    }
+  },
+  "defaultProject": "beautyBarAngular",
+  "cli": {
+    "analytics": "2dc3dbde-421e-4b44-9eb9-b5366191c245"
+  }
 }
