@@ -27,28 +27,28 @@ export class ClientService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get('//https://beauty-bar-java.herokuapp.com//api/client/list');
+    return this.http.get('https://beauty-bar-java.herokuapp.com/api/client/list');
   }
 
   getById(id): Observable<any> {
-    return this.http.get('//https://beauty-bar-java.herokuapp.com//api/client/get/' + id);
+    return this.http.get('https://beauty-bar-java.herokuapp.com/api/client/get/' + id);
   }
 
   create(client: Client): Observable<Client> {
-    const obsResp = this.http.post<Client>('//https://beauty-bar-java.herokuapp.com//api/client/create/',
+    const obsResp = this.http.post<Client>('https://beauty-bar-java.herokuapp.com/api/client/create/',
       client, httpOptions);
     return obsResp.pipe(
       tap( (fetchJSON) => JSON.stringify(fetchJSON) )
     );
   }
   update(haircut): Observable<any> {
-    const obsResp = this.http.post<any>('//https://beauty-bar-java.herokuapp.com//api/client/update/',
+    const obsResp = this.http.post<any>('https://beauty-bar-java.herokuapp.com/api/client/update/',
       haircut, httpOptions);
     return obsResp.pipe(
       tap( (fetchJSON) => JSON.stringify(fetchJSON) )
     );
   }
   delete(id): Observable<any> {
-    return this.http.delete('//https://beauty-bar-java.herokuapp.com//api/client/delete/' + id);
+    return this.http.delete('https://beauty-bar-java.herokuapp.com/api/client/delete/' + id);
   }
 }
